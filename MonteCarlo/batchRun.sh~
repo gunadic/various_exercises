@@ -1,0 +1,54 @@
+#/usr/bin/bash
+
+rm javaoutput.txt
+rm mpiOutput.txt
+rm openmpOutput.txt
+#rm cSeqOutput.txt
+#rm seqJavaOutput.txt
+
+javac parallelMonteCarloPi.java
+java parallelMonteCarloPi 1 128000000 7 >> ../javaoutput.txt
+java parallelMonteCarloPi 2 128000000 7 >> ../javaoutput.txt
+java parallelMonteCarloPi 4 128000000 7 >> ../javaoutput.txt
+java parallelMonteCarloPi 8 128000000 7 >> ../javaoutput.txt
+java parallelMonteCarloPi 16 128000000 7 >> ../javaoutput.txt
+java parallelMonteCarloPi 32 128000000 7 >> ../javaoutput.txt
+
+mpicc monte-carlo-pi-mpi.c 
+mpirun -np 1 a.out 128000000 7 >> mpiOutput.txt
+mpirun -np 2 a.out 128000000 7 >> mpiOutput.txt
+mpirun -np 4 a.out 128000000 7 >> mpiOutput.txt
+mpirun -np 8 a.out 128000000 7 >> mpiOutput.txt
+mpirun -np 16 a.out 128000000 7 >> mpiOutput.txt
+mpirun -np 32 a.out 128000000 7 >> mpiOutput.txt
+
+gcc monte-carlo-pi-openmp.c -fopenmp
+OMP_NUM_THREADS=1 ./a.out 128000000 7 >> openmpOutput.txt
+OMP_NUM_THREADS=2 ./a.out 128000000 7 >> openmpOutput.txt
+OMP_NUM_THREADS=4 ./a.out 128000000 7 >> openmpOutput.txt
+OMP_NUM_THREADS=8 ./a.out 128000000 7 >> openmpOutput.txt
+OMP_NUM_THREADS=16 ./a.out 128000000 7 >> openmpOutput.txt
+OMP_NUM_THREADS=32 ./a.out 128000000 7 >> openmpOutput.txt
+
+#gcc ../Sequential/C/sequential.c
+#./a.out 128000000 7 >> cSeqOutput.txt
+#./a.out 1000000 3 >> cSeqOutput.txt
+#./a.out 2000000 3 >> cSeqOutput.txt
+#./a.out 4000000 3 >> cSeqOutput.txt
+#./a.out 8000000 3 >> cSeqOutput.txt
+#./a.out 16000000 3 >> cSeqOutput.txt
+#./a.out 32000000 3 >> cSeqOutput.txt
+#./a.out 64000000 3 >> cSeqOutput.txt
+#./a.out 128000000 3 >> cSeqOutput.txt
+#rm a.out
+
+#cd ../Sequential/Java
+#javac MonteCarloPi.java
+#java MonteCarloPi 128000000 7 >> ../../Parallel/seqJavaOutput.txt
+#cd ../../Parallel
+
+mv javaoutput.txt #Output
+mv mpiOutput.txt #Output
+mv openmpOutput.txt #Output
+mv cSeqOutput.txt #Output
+mv seqJavaOutput.txt #Output

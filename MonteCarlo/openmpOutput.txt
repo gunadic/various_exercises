@@ -1,0 +1,30 @@
+Open MP  program results:
+number of samples = 128000000, seed = 7
+estimated pi = 3.1500766250
+difference between estimated pi and math.h M_PI = 0.0084839714
+time to compute = 8.72854 seconds
+Open MP  program results:
+number of samples = 128000000, seed = 7
+estimated pi = 3.1500769688
+difference between estimated pi and math.h M_PI = 0.0084843152
+time to compute = 4.33068 seconds
+Open MP  program results:
+number of samples = 128000000, seed = 7
+estimated pi = 3.1500796875
+difference between estimated pi and math.h M_PI = 0.0084870339
+time to compute = 2.18457 seconds
+Open MP  program results:
+number of samples = 128000000, seed = 7
+estimated pi = 3.1446786250
+difference between estimated pi and math.h M_PI = 0.0030859714
+time to compute = 2.12846 seconds
+Open MP  program results:
+number of samples = 128000000, seed = 7
+estimated pi = 3.1392876563
+difference between estimated pi and math.h M_PI = 0.0023049973
+time to compute = 1.86204 seconds
+Open MP  program results:
+number of samples = 128000000, seed = 7
+estimated pi = 3.1436879062
+difference between estimated pi and math.h M_PI = 0.0020952527
+time to compute = 1.71238 seconds

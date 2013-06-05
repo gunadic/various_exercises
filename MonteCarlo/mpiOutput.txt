@@ -1,0 +1,24 @@
+MPI Program Results: 
+estimated pi = 3.1500766250
+difference between estimated pi and math.h M_PI = 0.0084839714
+time to compute = 8.6136 seconds
+MPI Program Results: 
+estimated pi = 3.1500769688
+difference between estimated pi and math.h M_PI = 0.0084843152
+time to compute = 4.30402 seconds
+MPI Program Results: 
+estimated pi = 3.1500796875
+difference between estimated pi and math.h M_PI = 0.0084870339
+time to compute = 2.39975 seconds
+MPI Program Results: 
+estimated pi = 3.1446786250
+difference between estimated pi and math.h M_PI = 0.0030859714
+time to compute = 2.2477 seconds
+MPI Program Results: 
+estimated pi = 3.1392876562
+difference between estimated pi and math.h M_PI = 0.0023049973
+time to compute = 2.07996 seconds
+MPI Program Results: 
+estimated pi = 3.1436879063
+difference between estimated pi and math.h M_PI = 0.0020952527
+time to compute = 2.36175 seconds
